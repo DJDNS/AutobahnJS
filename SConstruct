@@ -39,9 +39,7 @@ sources = ["autobahn/license.js",
            "cryptojs/components/hmac.js",
            "cryptojs/components/sha256.js",
            "cryptojs/components/pbkdf2.js",
-           "autobahn/autobahn.js",
-           "autobahn/useragent.js",
-           "autobahn/tail.js"]
+           "autobahn/autobahn.js"]
 
 # NONE | WHITESPACE_ONLY | SIMPLE_OPTIMIZATIONS | ADVANCED_OPTIMIZATIONS
 
