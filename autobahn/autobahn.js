@@ -28,7 +28,8 @@ var global = this;
          // Also create a global in case some scripts
          // that are loaded still are looking for
          // a global even when an AMD loader is in use.
-         return (root.ab = factory(root, when));
+         root.ab = factory(root, when);
+         return root.ab;
       });
 
    } else if (typeof exports !== 'undefined') {
@@ -1225,6 +1226,3 @@ var global = this;
          appConfig.sessionConfig
       );
    };
-
-   return ab;
-}));

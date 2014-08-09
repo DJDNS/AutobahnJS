@@ -40,7 +40,8 @@ sources = ["autobahn/license.js",
            "cryptojs/components/sha256.js",
            "cryptojs/components/pbkdf2.js",
            "autobahn/autobahn.js",
-           "autobahn/useragent.js"]
+           "autobahn/useragent.js",
+           "autobahn/tail.js"]
 
 # NONE | WHITESPACE_ONLY | SIMPLE_OPTIMIZATIONS | ADVANCED_OPTIMIZATIONS
 
@@ -74,16 +75,16 @@ artifacts = [ab,
 
 ## Generate checksum files
 ##
-checksums = []
-checksums.append(env.MD5("build/CHECKSUM.MD5", artifacts))
-checksums.append(env.SHA1("build/CHECKSUM.SHA1", artifacts))
-checksums.append(env.SHA256("build/CHECKSUM.SHA256", artifacts))
+#checksums = []
+#checksums.append(env.MD5("build/CHECKSUM.MD5", artifacts))
+#checksums.append(env.SHA1("build/CHECKSUM.SHA1", artifacts))
+#checksums.append(env.SHA256("build/CHECKSUM.SHA256", artifacts))
 
 ## The default target consists of all artifacts that
 ## would get published
 ##
-uploads = artifacts + checksums
-Default(uploads)
+#uploads = artifacts + checksums
+#Default(uploads)
 
 ## Upload to Amazon S3
 ##
@@ -93,7 +94,7 @@ env['S3_OBJECT_ACL'] = 'public-read'
 
 ## The uploaded stuff is always considered stale
 ##
-publish = AlwaysBuild(env.S3("build/.S3UploadDone", uploads))
+#publish = AlwaysBuild(env.S3("build/.S3UploadDone", uploads))
 
-Depends(publish, uploads)
-Alias("publish", publish)
+#Depends(publish, uploads)
+#Alias("publish", publish)
